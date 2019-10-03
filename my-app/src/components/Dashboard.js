@@ -1,5 +1,5 @@
 import React from 'react';
-import {addStrike, addBalls, addFoul} from "../App"
+import {addStrike, addBalls, addFoul, hits} from "../App"
 
 
 
@@ -9,16 +9,16 @@ const Dashboard = (props) => {
     return(
         <>
             <div>
-                <button onClick={() => props.setStrikes(addStrike(props.strikes,props.balls)) }>Strike</button>
+                <button onClick={() => props.setStrikes(addStrike(props.strikes,props.setStrikes,props.setBalls)) }>Strike</button>
             </div>
             <div>
-                <button onClick={() => props.setBalls(addBalls(props.balls,props.strikes,props.setBalls))}>Ball</button>
+                <button onClick={() => props.setBalls(addBalls(props.balls,props.setStrikes,))}>Ball</button>
             </div>
             <div>
-                <button onClick={() => {}}>Foul</button>
+                <button onClick={() => props.setStrikes(addFoul(props.strikes))}>Foul</button>
             </div>
             <div>
-                <button onClick={() => {}}>Hit</button>
+                <button onClick={() => hits(props.setStrikes, props.setBalls)}>Hit</button>
             </div>
         </>
     )
