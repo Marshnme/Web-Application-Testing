@@ -23,8 +23,8 @@ export const addStrike = (strikes) => {
 
 
 
-      export const hits = (strikes, balls) => {
-        return (strikes(0), balls(0));
+      export const hits = (setStrikes, setBalls) => {
+        return (setStrikes(0), setBalls(0));
         };
       
 
@@ -36,6 +36,7 @@ const [balls, setBalls] = useState(0);
   
   return (
     <div className="App">
+      <h1>Player at bat</h1>
       <div>
         <Display balls={balls} setBalls={setBalls} strikes={strikes} setStrikes={setStrikes}/>
       </div>
